@@ -8,6 +8,16 @@
     
   </head>
   <body>
+    
+
     <h1>すごい地図</h1>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+      <script>
+       mapboxgl.accessToken = 'pk.eyJ1IjoieWFtYW11cmF5NjkiLCJhIjoiY2puYTNnam4zMGRwdDNwcGFoZmszcmVrMiJ9.NBi3ezGfPlFandHbUD-lDg';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11'
+        });
+      </script>
   </body>
 </html>
