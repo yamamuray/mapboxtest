@@ -30,6 +30,20 @@ map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl
 }));
+    
+    // icon click event
+    map.on('click', "symbol_sample", function (e) {
+        var coordinates = e.lngLat;
+        // set att
+        var description = '<p>属性</p>';
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+    });
 </script>
 
 </body>
