@@ -24,14 +24,14 @@
         style: 'mapbox://styles/yamamuray69/cjvej7l1y004t1fn7u9t2khjj'
         });
         // Navigation Control
-     //  map.addControl(
-       //new mapboxgl.NavigationControl(), 'top-left'
-        //);
+       map.addControl(
+       new mapboxgl.NavigationControl(), 'top-left'
+        );
         //Search Control
        map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl
-        });
+        }));
                       
         // Geolocation Control
       map.addControl(new mapboxgl.GeolocateControl({
