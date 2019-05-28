@@ -22,8 +22,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoieWFtYW11cmF5NjkiLCJhIjoiY2puYTNnam4zMGRwdDNwc
 var map = new mapboxgl.Map({
     container: 'map',
    style: 'mapbox://styles/yamamuray69/cjvej7l1y004t1fn7u9t2khjj',
-    center: [-79.4512, 43.6568],
-    zoom: 13
+ center: [139.7, 35.6],
+zoom: 3
 });
 
 map.addControl(new MapboxGeocoder({
@@ -35,7 +35,7 @@ map.addControl(new MapboxGeocoder({
     map.on('click', "symbol_sample", function (e) {
         var coordinates = e.lngLat;
         // set att
-        var description = '<p>属性</p>';
+        var description = document.getElementById('features').innerHTML = JSON.stringify(features, null, 2);
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
@@ -44,6 +44,7 @@ map.addControl(new MapboxGeocoder({
             .setHTML(description)
             .addTo(map);
     });
+
 </script>
 
 </body>
